@@ -1,0 +1,17 @@
+Nombre,Descripción,Precio,Imagen,Tipo,De Temporada
+Manzana,Fruta fresca,0.5,manzana.jpg,Fruta,Si
+Plátano,Fruta tropical,0.3,platano.jpg,Fruta,Si
+Naranja,Fruta cítrica,0.4,naranja.jpg,Fruta,Si
+Fresa,Fruta roja y dulce,1.2,fresa.jpg,Fruta,Si
+Lechuga,Vegetal verde,0.6,lechuga.jpg,Verdura,Si
+Tomate,Vegetal para ensaladas,0.8,tomate.jpg,Verdura,Si
+Zanahoria,Vegetal naranja,0.5,zanahoria.jpg,Verdura,Si
+Brócoli,Vegetal rico en nutrientes,1.5,brocoli.jpg,Verdura,Si
+Pimiento,Vegetal colorido,0.7,pimiento.jpg,Verdura,Si
+Pepino,Vegetal refrescante,0.4,pepino.jpg,Verdura,Si
+Cebolla,Base para muchas recetas,0.6,cebolla.jpg,Verdura,No
+Ajo,Aroma y sabor para cocinar,0.3,ajo.jpg,Verdura,No
+Perejil,Hierba fresca,0.2,perejil.jpg,Verdura,Si
+Cilantro,Hierba con sabor fuerte,0.4,cilantro.jpg,Verdura,Si
+Calabacín,Vegetal versátil,0.8,calabacin.jpg,Verdura,Si
+Berenjena,Vegetal morado,0.9,berenjena.jpg,Verdura,No

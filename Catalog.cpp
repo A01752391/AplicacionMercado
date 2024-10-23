@@ -21,6 +21,7 @@ void Catalog::loadProductsFromCSV(const std::string& filename) {
         stringstream ss(line);
         string name, description, imagen, type, isSeasonal;
         double price;
+        int cantidad;
 
         getline(ss, name, ',');
         getline(ss, description, ',');
@@ -30,8 +31,24 @@ void Catalog::loadProductsFromCSV(const std::string& filename) {
         getline(ss, type, ',');
         getline(ss, isSeasonal);
 
-        productos.emplace_back(name, description, price, imagen, type, isSeasonal);
+        // Verificar si la línea se ha leído correctamente
+        if (!name.empty() && !description.empty() && price >= 0) {
+            productos.emplace_back(name, description, price, imagen, type, isSeasonal, cantidad);
+        }
     }
+}
+
+bool Catalog::shouldDisplay(const Productos& product, const string& filter) const {
+    if (filter == "frutas" && product.getType() != "Fruta") {
+        return false;
+    }
+    if (filter == "verduras" && product.getType() != "Verdura") {
+        return false;
+    }
+    if (filter == "temporada" && product.getIsSeasonal() != "Si") {
+        return false;
+    }
+    return true;
 }
 
 void Catalog::displayProducts(const string& filter) const {
@@ -41,22 +58,11 @@ void Catalog::displayProducts(const string& filter) const {
     }
 
     for (const auto& product : productos) {
-        bool show = true;
-
-        if (filter == "frutas" && product.type != "Fruta") {
-            show = false;
-        } else if (filter == "verduras" && product.type != "Verdura") {
-            show = false;
-        } else if (filter == "temporada" && product.isSeasonal != "Si") {
-            show = false;
-        }
-
-        if (show) {
+        if (shouldDisplay(product, filter)) {
             // Formato: Nombre | Precio | Imagen | Descripción
-            cout << product.name << " | $" << product.price 
-                 << " | " << product.imagen 
-                 << " | " << product.description << endl;
+            cout << product.getNombre() << " | $" << product.getPrice() << endl;
+            cout << product.getImagen()  << " | " << product.getDescription() << endl;
+            cout << endl;
         }
     }
 }
-

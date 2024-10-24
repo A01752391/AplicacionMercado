@@ -100,6 +100,12 @@ void showMerchantMenu() {
                 break;
             case 2:
                 cout << "Aquí se mostraría el inventario del comerciante.\n";
+                // Crear un pedido
+                int userId;
+                cout << "Ingrese ID de usuario: ";
+                cin >> userId;
+                
+                catalog.displayProducts("temporada");
                 cout << endl;
                 break;
             case 0:

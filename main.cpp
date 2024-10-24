@@ -56,14 +56,6 @@ void showUserMenu(Catalog& catalog) {
                 cout << "Ingrese ID de usuario: ";
                 cin >> userId;
 
-                string pedido;
-                cout << "Producto elegido: ";
-                cin >> pedido;
-
-                int cant;
-                cout << "Cantidad: ";
-                cin >> cant;
-
                 // Aquí se debería buscar el usuario y sus productos
                 vector<Productos> productosComprados; // Implementar la lógica para seleccionar productos...
 
@@ -120,7 +112,7 @@ void showMerchantMenu() {
 
 int main() {
     Catalog catalog;
-    catalog.loadProductsFromCSV("/Users/mirandaurbansolano/App/AplicacionMercado/productos.csv");
+    catalog.loadProductsFromCSV("/workspaces/AplicacionMercado/productos.csv");
 
     int roleChoice;
     do {
